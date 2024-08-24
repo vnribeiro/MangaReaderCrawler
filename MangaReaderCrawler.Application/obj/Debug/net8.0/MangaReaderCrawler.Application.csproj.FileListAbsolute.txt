@@ -1,0 +1,15 @@
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\MangaReaderCrawler.Application.deps.json
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\MangaReaderCrawler.Application.dll
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\bin\Debug\net8.0\MangaReaderCrawler.Application.pdb
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.csproj.AssemblyReference.cache
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.GeneratedMSBuildEditorConfig.editorconfig
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.AssemblyInfoInputs.cache
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.AssemblyInfo.cs
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.csproj.CoreCompileInputs.cache
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.dll
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\refint\MangaReaderCrawler.Application.dll
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\MangaReaderCrawler.Application.pdb
+c:\Dev\Projects\MangaReaderCrawler\MangaReaderCrawler.Application\obj\Debug\net8.0\ref\MangaReaderCrawler.Application.dll
