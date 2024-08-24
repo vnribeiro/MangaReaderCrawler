@@ -1,0 +1,39 @@
+# Ignore Visual Studio files
+.vs/
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+packages/
+
+# Ignore user-specific files
+*.user
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+
+# Ignore logs
+*.log
+
+# Ignore test results
+TestResults/
+
+# Ignore Resharper files
+_ReSharper*/
+
+# Ignore Visual Studio Code files
+.vscode/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore JetBrains Rider files
+.idea/
+*.sln.iml
+
+# Ignore Windows specific files
+Thumbs.db
