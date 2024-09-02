@@ -1,35 +1,35 @@
 using System.Text.RegularExpressions;
-using MangaReaderCrawler.Application.Services.Interfaces;
+using MangaReaderDownloader.ConsoleApp.Application.Services.Interfaces;
 
-namespace MangaReaderCrawler.ConsoleApp;
+namespace MangaReaderDownloader.ConsoleApp;
 
-public class Prompt(ICrawlerService crawlerService)
+public class Prompt(IDownloaderService downloaderService)
 {
-  private const string _UrlRegex = @"^https?:\/\/mangareader\.to\/.*";
-  private readonly ICrawlerService _crawler = crawlerService;
+    private const string _UrlRegex = @"^https?:\/\/mangareader\.to\/.*";
+    private readonly IDownloaderService _downloader = downloaderService;
 
-  public void Run()
-  {
-    var imputUrl = string.Empty;
-
-    while (true)
+    public void Run()
     {
-      Console.Write("Enter the URL of the manga you want to download: ");
-      imputUrl = Console.ReadLine()!;
+        var imputUrl = string.Empty;
 
-      // Validate input using Regex
-      if (Regex.IsMatch(imputUrl, _UrlRegex))
-      {
-        Console.WriteLine($"You entered a valid URL: {imputUrl}");
-        break; // Exit the loop if input is valid
-      }
-      else
-      {
-        Console.WriteLine("Invalid URL. Please try again.");
-      }
+        while (true)
+        {
+            Console.Write("Enter the URL of the manga you want to download: ");
+            imputUrl = Console.ReadLine()!;
+
+            // Validate input using Regex
+            if (Regex.IsMatch(imputUrl, _UrlRegex))
+            {
+                Console.WriteLine($"You entered a valid URL: {imputUrl}");
+                break; // Exit the loop if input is valid
+            }
+            else
+            {
+                Console.WriteLine("Invalid URL. Please try again.");
+            }
+        }
+
+        // Call the download method of the DownloaderService
+        _downloader.Download(imputUrl);
     }
-
-    // Call the Crawl method of the CrawlerService
-    _crawler.Crawl(imputUrl);
-  }
 }
