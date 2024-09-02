@@ -5,7 +5,7 @@ namespace MangaReaderCrawler.ConsoleApp;
 
 public class Prompt(ICrawlerService crawlerService)
 {
-  private const string _UrlRegex = @"(http|https):\/\/[^\s/$.?#].[^\s]*";
+  private const string _UrlRegex = @"^https?:\/\/mangareader\.to\/.*";
   private readonly ICrawlerService _crawler = crawlerService;
 
   public void Run()
