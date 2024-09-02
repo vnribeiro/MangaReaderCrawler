@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace MangaReaderCrawler.Application.Helper;
+namespace MangaReaderCrawler.Infrastructure.Config;
 
 public static class Driver
 {
