@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace MangaReaderDownloader.ConsoleApp.Infrastructure.Extensions;
 
-public static class ChromeDriverExtensions
+public static class WebElementExtensions
 {
     /// <summary>
     /// Finds the first element in the current web driver's page that matches the specified <paramref name="by"/> condition.
@@ -12,14 +12,22 @@ public static class ChromeDriverExtensions
     /// <param name="by">The condition used to find the element.</param>
     /// <param name="timeoutInSeconds">The maximum time to wait for the element to be found, in seconds.</param>
     /// <returns>The first <see cref="IWebElement"/> that matches the specified condition.</returns>
-    public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)
+    public static IWebElement WaitForElement(this IWebDriver driver, By by, int timeoutInSeconds, int maxAttempts = 10)
     {
-        if (timeoutInSeconds > 0)
+        while (maxAttempts > 0)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            return wait.Until(drv => drv.FindElement(by));
+            try
+            {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+                return wait.Until(drv => drv.FindElement(by));
+            }
+            catch (WebDriverTimeoutException)
+            {
+                maxAttempts--;
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+            }
         }
-        
-        return driver.FindElement(by);
+
+        throw new NoSuchElementException($"Element with locator {by} was not found after multiple attempts.");
     }
 }

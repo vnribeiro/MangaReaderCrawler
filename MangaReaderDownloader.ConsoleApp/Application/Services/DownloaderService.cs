@@ -37,16 +37,16 @@ namespace MangaReaderDownloader.ConsoleApp.Application.Services
             var retryAttempts = 0;
             var maxAttempts = 30;
 
-            var totalPages = int.Parse(driver.FindElement(By.CssSelector(TotalPagesXpath), 15).Text);
-
-            while (page <= totalPages)
+            var totalPages = driver.WaitForElement(By.CssSelector(TotalPagesXpath), 5).Text;
+            
+            while (page <= int.Parse(totalPages))
             {
                 Console.WriteLine($"Downloading page {page} of {totalPages}. Please wait...");
 
                 var print = driver.Print(new PrintOptions
                 {
                     Orientation = PrintOrientation.Landscape,
-                    ScaleFactor = 100,
+                    ScaleFactor = 2.0,
                     OutputBackgroundImages = true,
                 });
 
@@ -55,6 +55,8 @@ namespace MangaReaderDownloader.ConsoleApp.Application.Services
 
                 // Save each page with a unique name
                 var fileName = $"printed_page_{page}.pdf";
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var path = Path.Combine(currentDirectory, "volumes", fileName);
                 File.WriteAllBytes(fileName, pdfData);
 
                 Console.WriteLine($"Page {page} has been downloaded as {fileName}.");
