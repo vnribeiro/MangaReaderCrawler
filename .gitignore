@@ -1,6 +1,9 @@
 # Ignore Visual Studio files
 .vs/
 
+# Ignore Downloads
+Downloads
+
 # Ignore build output
 bin/
 obj/
